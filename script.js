@@ -180,7 +180,6 @@ const go = (direction) => {
 						targets: twoRoomImages[1],
 						translateX: [0, '100%'],
 						complete: () => {
-							playing = false;
 							heroMiddle.removeChild(heroMiddle.lastElementChild);
 						},
 					},
@@ -231,7 +230,6 @@ const go = (direction) => {
 						translateX: [0, '10%'],
 						opacity: [1, 0],
 						complete: () => {
-							playing = false;
 							titleContainer.removeChild(
 								titleContainer.lastElementChild
 							);
@@ -258,10 +256,6 @@ const go = (direction) => {
 						targets: twoTextsTop[1],
 						translateX: [0, '10%'],
 						opacity: [1, 0],
-						complete: () => {
-							playing = false;
-							// topTextContainer.removeChild(twoTextsTop[1]);
-						},
 					},
 					'-=1000'
 				);
@@ -300,7 +294,6 @@ const go = (direction) => {
 						targets: twoRoomImages[1],
 						translateX: [0, '-100%'],
 						complete: () => {
-							playing = false;
 							heroMiddle.removeChild(heroMiddle.lastElementChild);
 						},
 					},
@@ -351,7 +344,6 @@ const go = (direction) => {
 						translateX: [0, '-10%'],
 						opacity: [1, 0],
 						complete: () => {
-							playing = false;
 							titleContainer.removeChild(
 								titleContainer.lastElementChild
 							);
@@ -378,7 +370,6 @@ const go = (direction) => {
 						translateX: [0, '10%'],
 						opacity: [1, 0],
 						complete: () => {
-							playing = false;
 							topTextContainer.removeChild(
 								topTextContainer.lastElementChild
 							);
