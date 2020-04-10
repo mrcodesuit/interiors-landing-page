@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Animated Landing Page | HTML CSS JavaScript Animejs #1</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+   <div id="hero">
+
+
+
+      <div class="hero-left">
+         <nav class="main-nav" id="main-nav">
+            <ul>
+               <li class="active"><span>Home</span></li>
+               <li><span>About us</span></li>
+               <li><span>Rooms</span></li>
+               <li><span>Collections</span></li>
+            </ul>
+            <div class="cross" id="cross">
+               &#10007;
+            </div>
+         </nav>
+         <div class="nav-holder">
+            <div class="logo-wrapper">
+               <div class="logo">Interiors</div>
+            </div>
+            <div class="menu-toggler" id="menu-toggler">
+               <span><span></span></span>
+               <span><span></span></span>
+               <span><span></span></span>
+            </div>
+         </div>
+         <div class="content">
+            <div class="indicator">
+               <p id="indicator-current">01.</p>
+               <div class="line"></div>
+               <p id="indicator-counter">03.</p>
+            </div>
+            <div class="text" id="text">
+               <div id="h1-container">
+                  <h1>Spacious living rooms</h1>
+               </div>
+               <div id="p-container">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, repellendus? Provident sequi
+                     maximre magni sunt natus soluta Ipsum ab
+                     error labore veniam ullam atque,
+                     placeat illum quibusdam .</p>
+               </div>
+               <div class="btns-row">
+                  <div class="btn" id="prev" onclick="go(-1)"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24">
+                        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" /></svg>
+                  </div>
+                  <div class="btn" id="next" onclick="go(1)"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24">
+                        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" /></svg>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+
+      <div class="hero-middle" id="hero-middle">
+         <img src="./img/img1.jpg">
+      </div>
+      <div class="hero-right">
+         <div class="top" id="topContainer">
+            <div class="bg"></div>
+            <p>START EXPLORING</p>
+            <div id="top-text-container">
+               <p>Explore the living rooms
+                  <span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M24 11.871l-5-4.871v3h-19v4h19v3z" /></svg></span>
+               </p>
+
+
+            </div>
+
+         </div>
+         <div class="bottom">
+            <div class="product" id="product">
+               <p>FEATURED PRODUCT</p>
+               <div id="images-container">
+                  <img src="./img//product1.png" alt="">
+               </div>
+               <div id="title-container">
+                  <p class="title">Design chair</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.1.0/anime.min.js"></script>
+   <script src="./script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,518 @@
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/muli/v20/7Aulp_0qiz-aVz7u3PJLcUMYOFmQkHkw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/muli/v20/7Aulp_0qiz-aVz7u3PJLcUMYOFnOkHkw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/muli/v20/7Aulp_0qiz-aVz7u3PJLcUMYOFn8kHkw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/muli/v20/7Aulp_0qiz-aVz7u3PJLcUMYOFlOl3kw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/muli/v20/7Aulp_0qiz-aVz7u3PJLcUMYOFlnl3kw.ttf) format('truetype');
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Muli', sans-serif;
+}
+#hero {
+  width: 100%;
+  max-width: 1920px;
+  height: 100vh;
+  max-height: 1080px;
+  margin: 0 auto;
+  display: flex;
+  overflow: hidden;
+}
+@media only screen and (max-width: 768px) {
+  #hero {
+    flex-direction: column;
+    max-height: unset;
+  }
+}
+#hero .hero-left {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-left {
+    padding-bottom: 0;
+    flex: 2;
+  }
+}
+#hero .hero-left nav.main-nav {
+  position: absolute;
+  background-color: #e9e9e9;
+  margin-left: -2rem;
+  margin-top: -2rem;
+  z-index: 100;
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 2rem;
+  border-bottom-right-radius: 2rem;
+  transform: translateX(-100%);
+  transition: transform 0.6s ease-in-out;
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-left nav.main-nav {
+    height: 120%;
+  }
+}
+@media only screen and (max-width: 414px) {
+  #hero .hero-left nav.main-nav {
+    height: 150%;
+  }
+}
+#hero .hero-left nav.main-nav ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 0;
+}
+#hero .hero-left nav.main-nav ul li {
+  display: inline-block;
+  margin: 1rem 0;
+  font-size: 2rem;
+  text-align: right;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 414px) {
+  #hero .hero-left nav.main-nav ul li {
+    font-size: 1.5rem;
+  }
+}
+#hero .hero-left nav.main-nav ul li.active span {
+  display: inline-block;
+  position: relative;
+}
+#hero .hero-left nav.main-nav ul li.active span::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: #8d8d8d;
+  width: 40px;
+  height: 10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  left: -45px;
+  transition: all 0.2s;
+}
+#hero .hero-left nav.main-nav ul li:hover:not(.active) span {
+  display: inline-block;
+  position: relative;
+}
+#hero .hero-left nav.main-nav ul li:hover:not(.active) span::before {
+  content: '';
+  display: block;
+  position: absolute;
+  background-color: #8d8d8d;
+  width: 20px;
+  height: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -35px;
+  transition: all 0.5s;
+}
+#hero .hero-left nav.main-nav .cross {
+  position: absolute;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+#hero .hero-left .nav-holder {
+  display: flex;
+  justify-content: space-between;
+}
+#hero .hero-left .nav-holder .logo-wrapper {
+  z-index: 111;
+}
+#hero .hero-left .nav-holder .logo-wrapper .logo {
+  font-weight: 900;
+}
+#hero .hero-left .nav-holder .menu-toggler {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 14px;
+  height: 15px;
+  cursor: pointer;
+  z-index: 111;
+}
+#hero .hero-left .nav-holder .menu-toggler:hover span:nth-of-type(1) span,
+#hero .hero-left .nav-holder .menu-toggler:hover span:nth-of-type(2) span,
+#hero .hero-left .nav-holder .menu-toggler:hover span:nth-of-type(3) span {
+  width: 0%;
+}
+#hero .hero-left .nav-holder .menu-toggler span {
+  position: relative;
+  background-color: black;
+  height: 2px;
+  width: 100%;
+  transform-origin: right;
+}
+#hero .hero-left .nav-holder .menu-toggler span span {
+  position: absolute;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  transition: width 0.3s ease-in-out;
+}
+#hero .hero-left .nav-holder .menu-toggler span:nth-of-type(1) span {
+  width: 20%;
+}
+#hero .hero-left .nav-holder .menu-toggler span:nth-of-type(2) {
+  margin: 2px 0;
+}
+#hero .hero-left .nav-holder .menu-toggler span:nth-of-type(2) span {
+  width: 35%;
+}
+#hero .hero-left .nav-holder .menu-toggler span:nth-of-type(3) span {
+  width: 5%;
+}
+#hero .hero-left .content {
+  padding: 2.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+@media only screen and (max-width: 414px) {
+  #hero .hero-left .content {
+    padding: 1.25rem;
+  }
+}
+#hero .hero-left .content .indicator {
+  display: flex;
+  align-items: center;
+}
+#hero .hero-left .content .indicator p {
+  letter-spacing: 3px;
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+#hero .hero-left .content .indicator .line {
+  display: inline-block;
+  background-color: black;
+  height: 2px;
+  width: 80px;
+  margin: 0 0.5rem;
+  margin-right: 0.7rem;
+}
+#hero .hero-left .content .text {
+  width: 85%;
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-left .content .text {
+    width: 100%;
+  }
+}
+#hero .hero-left .content .text #h1-container {
+  position: relative;
+  overflow: hidden;
+  min-height: 212px;
+  width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-left .content .text #h1-container {
+    min-height: 100px;
+  }
+}
+@media only screen and (max-width: 414px) {
+  #hero .hero-left .content .text #h1-container {
+    min-height: 130px;
+  }
+}
+#hero .hero-left .content .text #h1-container h1 {
+  position: absolute;
+  font-size: 3rem;
+  font-weight: 900;
+  margin-top: 3.75rem;
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-left .content .text #h1-container h1 {
+    margin: 2rem 0;
+  }
+}
+@media only screen and (max-width: 414px) {
+  #hero .hero-left .content .text #h1-container h1 {
+    font-size: 2rem;
+    margin-top: 2.5rem;
+  }
+}
+#hero .hero-left .content .text #p-container {
+  position: relative;
+  overflow: hidden;
+  min-height: 224px;
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-left .content .text #p-container {
+    width: 100%;
+    min-height: 130px;
+    margin-bottom: 1rem;
+  }
+}
+@media only screen and (max-width: 414px) {
+  #hero .hero-left .content .text #p-container {
+    display: none;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+#hero .hero-left .content .text #p-container p {
+  position: absolute;
+  line-height: 1.9;
+  margin-bottom: 3.5rem;
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-left .content .text #p-container p {
+    margin-bottom: 2.5rem;
+  }
+}
+@media only screen and (max-width: 414px) {
+  #hero .hero-left .content .text #p-container p {
+    font-size: 1rem;
+    margin-top: 0;
+  }
+}
+#hero .hero-left .content .text .btns-row {
+  display: flex;
+}
+#hero .hero-left .content .text .btns-row .btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#hero .hero-left .content .text .btns-row .btn:hover:nth-of-type(1) svg {
+  transform: scale(0.45) scaleX(-1) translateX(7px);
+}
+#hero .hero-left .content .text .btns-row .btn:hover:nth-of-type(2) svg {
+  transform: scale(0.45) translateX(7px);
+}
+#hero .hero-left .content .text .btns-row .btn:nth-of-type(1) svg {
+  transform: scale(0.45) scaleX(-1);
+}
+#hero .hero-left .content .text .btns-row .btn:nth-of-type(2) {
+  margin-left: 7px;
+}
+#hero .hero-left .content .text .btns-row .btn svg {
+  transform: scale(0.45);
+  transition: all 0.25s ease-in-out;
+}
+#hero .hero-middle {
+  flex: 4;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  height: 100vh;
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-middle {
+    flex: 3;
+  }
+}
+#hero .hero-middle img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+@media only screen and (max-width: 414px) {
+  #hero .hero-middle img {
+    object-position: 50% 70%;
+  }
+}
+#hero .hero-right {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-right {
+    flex-direction: row;
+    flex: 3;
+  }
+}
+#hero .hero-right .top {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50%;
+  overflow: hidden;
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-right .top {
+    width: 50%;
+    height: 100%;
+  }
+}
+#hero .hero-right .top .bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: lightblue;
+  z-index: -1;
+}
+#hero .hero-right .top p:first-of-type {
+  font-size: 0.5rem;
+  letter-spacing: 2px;
+  font-weight: 800;
+  padding: 2rem 3rem 0 3rem;
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-right .top p:first-of-type {
+    padding: 1rem 1rem 0.5rem 1.5rem;
+  }
+}
+#hero .hero-right .top #top-text-container {
+  position: relative;
+  min-height: 112px;
+}
+#hero .hero-right .top #top-text-container p {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  cursor: pointer;
+  padding: 0 3rem 2rem 3rem;
+}
+@media only screen and (max-width: 414px) {
+  #hero .hero-right .top #top-text-container p {
+    padding: 0 1rem 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+#hero .hero-right .top #top-text-container p:hover svg {
+  transform: translateX(10px);
+}
+#hero .hero-right .top #top-text-container p svg {
+  vertical-align: middle;
+  margin-left: 0.7rem;
+  transition: transform 0.3s ease-in-out;
+}
+#hero .hero-right .bottom {
+  height: 50%;
+  position: relative;
+  overflow: hidden;
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-right .bottom {
+    width: 50%;
+    height: 100%;
+  }
+}
+#hero .hero-right .bottom .product {
+  padding: 2rem 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 414px) {
+  #hero .hero-right .bottom .product {
+    padding: 1rem;
+  }
+}
+#hero .hero-right .bottom .product p:first-of-type {
+  text-align: center;
+  margin: 0;
+  font-size: 0.5rem;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+#hero .hero-right .bottom .product #images-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform: scale(0.8);
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-right .bottom .product #images-container {
+    transform: scale(0.7);
+    height: 225px;
+  }
+}
+@media only screen and (max-width: 414px) {
+  #hero .hero-right .bottom .product #images-container {
+    transform: scale(1);
+    height: 100%;
+  }
+}
+#hero .hero-right .bottom .product #images-container img {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0%;
+}
+@media only screen and (max-width: 768px) {
+  #hero .hero-right .bottom .product #images-container img {
+    transform: translateY(-50%);
+  }
+}
+#hero .hero-right .bottom .product #title-container {
+  position: relative;
+  height: 40px;
+}
+#hero .hero-right .bottom .product #title-container .title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+@media only screen and (max-width: 414px) {
+  #hero .hero-right .bottom .product #title-container .title {
+    font-size: 1rem;
+  }
+}
